@@ -1,0 +1,67 @@
+# Redrob Hackathon — Submission Metadata
+# Team: Rupak Bera
+
+team_name: "rupak_bera"
+
+primary_contact:
+  name: "Rupak Bera"
+  email: ""          # Fill in your registered email
+  phone: ""          # Fill in your phone for top-50 outreach
+
+team_members:
+  - name: "Rupak Bera"
+    email: ""
+    role: "ML Engineer / Solo Participant"
+
+github_repo: ""   # Fill in your GitHub repo URL after pushing
+
+sandbox_link: ""  # Fill in HuggingFace Spaces / Streamlit Cloud link
+
+reproduce_command: "python precompute.py --candidates ./candidates.jsonl && python rank.py --candidates ./candidates.jsonl --out ./rupak_bera.csv"
+
+compute:
+  platform: "Windows PC"
+  cpu_cores: 8
+  ram_gb: 16
+  python_version: "3.13"
+  os: "Windows 11"
+  uses_gpu_for_inference: false
+  has_network_during_ranking: false
+  pre_computation_required: true
+  pre_computation_time_minutes: 20
+
+ai_tools_used:
+  - "Antigravity (Google DeepMind)"
+
+ai_usage_summary: |
+  Used Antigravity AI coding assistant for architecture design, code generation, and review.
+  Groq API (llama-3.3-70b-versatile) used OFFLINE during precompute.py to generate
+  candidate reasoning strings. No candidate data is sent to any LLM during the
+  ranking step (rank.py). All ranking is deterministic and reproducible CPU-only.
+
+methodology_summary: |
+  Two-phase hybrid ranking pipeline:
+
+  Phase 1 (Offline — precompute.py, ~20 min):
+  - Extract 30+ structured features per candidate (skill depth, career quality,
+    behavioral signals, logistical fit) from all 100K profiles.
+  - Embed all candidates using sentence-transformers/all-MiniLM-L6-v2 (local, CPU).
+  - Compute cosine similarity of each candidate embedding against a JD embedding.
+  - Select top-300 by initial composite score → call Groq LLM offline to generate
+    specific, non-hallucinated reasoning strings and refine scores.
+  - Cache all results to disk.
+
+  Phase 2 (Ranking — rank.py, <90 seconds):
+  - Stream 100K JSONL, extract features, load cached similarity scores.
+  - Composite score = 0.35×semantic + 0.30×skill_match + 0.20×career_quality + 0.15×behavioral.
+  - Anti-keyword-stuffing: pure IT services career → career_quality penalty;
+    title mismatch (Marketing Manager with AI keywords) → near-zero career score.
+  - Behavioral multiplier: inactive/unresponsive candidates down-weighted.
+  - Output top-100 with LLM-generated reasoning (or rule-based fallback).
+
+declarations:
+  read_submission_spec: true
+  code_is_original_work: true
+  no_collusion: true
+  honeypot_check_done: true
+  reproduction_tested: true

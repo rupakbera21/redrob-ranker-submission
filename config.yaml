@@ -1,0 +1,233 @@
+# ============================================================
+# Redrob Hackathon — Candidate Ranking System Configuration
+# Rupak Bera | Senior AI Engineer JD
+# ============================================================
+
+# ------------------------------------------------------------
+# Submission identity
+# ------------------------------------------------------------
+participant_id: "rupak_bera"
+submission_file: "rupak_bera.csv"
+
+# ------------------------------------------------------------
+# Composite scoring weights (must sum to 1.0)
+# Tuned against JD emphasis:
+#   - JD cares most about semantic fit + deep AI skills
+#   - Career quality crucial (anti-keyword-stuffer)
+#   - Behavioral signals matter (availability/engagement)
+# ------------------------------------------------------------
+weights:
+  semantic_fit:    0.35   # Sentence-transformer cosine sim vs JD
+  skill_match:     0.30   # AI/ML core skill coverage & depth
+  career_quality:  0.20   # Trajectory, company type, role seniority
+  behavioral:      0.15   # Platform engagement, responsiveness, availability
+
+# ------------------------------------------------------------
+# JD Parameters (derived from job_description.docx)
+# ------------------------------------------------------------
+jd:
+  title: "Senior AI Engineer - Founding Team"
+  company: "Redrob AI"
+  location: "Pune / Noida"
+  experience_min: 5
+  experience_max: 9
+  notice_buyout_days: 30
+
+  # Locations that match or partially match — used for logistical fit
+  preferred_locations:
+    - "Pune"
+    - "Noida"
+    - "Hyderabad"
+    - "Mumbai"
+    - "Delhi"
+    - "Bangalore"
+    - "Bengaluru"
+    - "Gurgaon"
+    - "Gurugram"
+
+  preferred_work_modes:
+    - "hybrid"
+    - "onsite"
+    - "flexible"
+
+  # Companies/career patterns to PENALIZE (per JD explicit language)
+  # Only applied if candidate has ZERO product-company experience
+  pure_services_companies:
+    - "tcs"
+    - "tata consultancy"
+    - "infosys"
+    - "wipro"
+    - "accenture"
+    - "cognizant"
+    - "capgemini"
+    - "hcl"
+    - "hexaware"
+    - "mphasis"
+    - "tech mahindra"
+    - "techmahindra"
+    - "ltimindtree"
+    - "l&t infotech"
+    - "mindtree"
+    - "niit technologies"
+    - "mastech"
+    - "kpit"
+    - "birlasoft"
+    - "dxc technology"
+    - "unisys"
+    - "zensar"
+    - "cyient"
+    - "igate"
+    - "patni"
+
+  # AI/ML role title keywords — boosts career_quality score
+  ai_role_titles:
+    - "ml engineer"
+    - "machine learning engineer"
+    - "ai engineer"
+    - "artificial intelligence"
+    - "data scientist"
+    - "nlp engineer"
+    - "research engineer"
+    - "applied scientist"
+    - "search engineer"
+    - "ranking engineer"
+    - "recommendation engineer"
+    - "applied researcher"
+    - "research scientist"
+    - "mlops"
+    - "ml platform"
+    - "senior ml"
+    - "lead ml"
+    - "principal ml"
+    - "staff ml"
+    - "deep learning engineer"
+
+# ------------------------------------------------------------
+# Core AI/ML Skills (from JD requirements)
+# Weight = relevance multiplier (higher = more important to JD)
+# ------------------------------------------------------------
+core_ai_skills:
+  # === MUST-HAVE: Embeddings & Vector Retrieval ===
+  "sentence transformers":          3.0
+  "sentence-transformers":          3.0
+  "faiss":                          3.0
+  "pinecone":                       3.0
+  "weaviate":                       3.0
+  "qdrant":                         3.0
+  "milvus":                         3.0
+  "opensearch":                     2.5
+  "elasticsearch":                  2.5
+  "vector search":                  3.0
+  "vector database":                3.0
+  "embeddings":                     3.0
+  "semantic search":                3.0
+  "dense retrieval":                3.0
+  "hybrid search":                  3.0
+  "information retrieval":          3.0
+  "retrieval":                      2.5
+  "bm25":                           2.5
+
+  # === MUST-HAVE: Ranking & Evaluation ===
+  "ranking":                        2.5
+  "reranking":                      3.0
+  "re-ranking":                     3.0
+  "learning to rank":               3.0
+  "ltr":                            2.5
+  "ndcg":                           3.0
+  "mrr":                            3.0
+  "map":                            2.0
+  "recall@k":                       2.0
+  "a/b testing":                    2.0
+
+  # === MUST-HAVE: LLMs & NLP ===
+  "nlp":                            2.5
+  "natural language processing":    2.5
+  "llm":                            2.5
+  "large language model":           2.5
+  "rag":                            2.5
+  "retrieval augmented generation": 2.5
+  "transformer":                    2.0
+  "bert":                           2.0
+  "python":                         2.0
+
+  # === NICE-TO-HAVE: Fine-tuning ===
+  "fine-tuning llms":               2.5
+  "fine tuning":                    2.0
+  "lora":                           2.5
+  "qlora":                          2.5
+  "peft":                           2.5
+  "instruction tuning":             2.0
+  "rlhf":                           2.0
+
+  # === NICE-TO-HAVE: ML Infrastructure ===
+  "pytorch":                        1.5
+  "xgboost":                        1.5
+  "feature engineering":            1.0
+  "scikit-learn":                   1.0
+  "machine learning":               1.0
+  "deep learning":                  1.0
+  "tensorflow":                     0.8
+  "weights & biases":               1.5
+  "mlflow":                         1.2
+  "spark":                          0.8
+
+  # === LOW-RELEVANCE: CV/Speech (JD says not ideal without NLP/IR) ===
+  "image classification":           0.4
+  "object detection":               0.4
+  "speech recognition":             0.4
+  "tts":                            0.4
+  "gans":                           0.3
+  "computer vision":                0.4
+
+# ------------------------------------------------------------
+# Proficiency multipliers
+# ------------------------------------------------------------
+proficiency_weights:
+  expert:       1.00
+  advanced:     0.80
+  intermediate: 0.50
+  beginner:     0.20
+
+# ------------------------------------------------------------
+# Behavioral signal tuning
+# ------------------------------------------------------------
+behavioral:
+  # Recency decay: candidates inactive >N days get score decay
+  recency_halflife_days: 60
+  # Open-to-work bonus multiplier
+  open_to_work_bonus: 1.15
+  # Notice period: exponential penalty beyond buyout threshold
+  notice_penalty_scale: 30
+  # Minimum recruiter_response_rate considered "engaged"
+  responsive_threshold: 0.3
+
+# ------------------------------------------------------------
+# Precompute settings
+# ------------------------------------------------------------
+precompute:
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  embedding_batch_size: 512
+  top_n_for_groq: 300         # Send top-N candidates to Groq for refined reasoning
+  groq_model: "llama-3.3-70b-versatile"
+  groq_batch_size: 5          # Candidates per Groq API call
+  groq_max_retries: 3
+  cache_dir: "./cache"
+
+# ------------------------------------------------------------
+# JD embedding text (condensed semantic representation)
+# Used for cosine similarity against candidate embeddings
+# ------------------------------------------------------------
+jd_embedding_text: |
+  Senior AI Engineer founding team startup Series A talent intelligence platform.
+  Production machine learning: embeddings retrieval ranking vector databases hybrid search candidates.
+  Required skills: sentence-transformers FAISS Pinecone Weaviate Qdrant Milvus OpenSearch Elasticsearch.
+  Required: Python expert NLP information retrieval ranking systems evaluation NDCG MRR MAP A/B testing.
+  Required: production deployed embeddings systems vector database operational experience real users scale.
+  Nice to have: LLM fine-tuning LoRA QLoRA PEFT learning-to-rank recommendation RAG retrieval augmented generation.
+  Experience: 5 to 9 years applied machine learning product companies startup not IT consulting services.
+  Candidate job description matching talent intelligence platform recommender system.
+  Location: Pune Noida Hyderabad Mumbai Delhi Bangalore India hybrid onsite work.
+  Startup mindset: ship fast product engineer scrappy founding team technical depth.
+  NOT: pure researcher academic no production only consulting TCS Infosys Wipro Accenture.
+  NOT: only computer vision speech robotics without NLP information retrieval background.
+  Active job seeker open to work responsive short notice period recently active.

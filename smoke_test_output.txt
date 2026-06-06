@@ -1,0 +1,71 @@
+﻿python : C:\Users\RUPAK\Desktop\INDIA RUNS\redrob-ranker\smoke_test_no_deps.py:159: DeprecationWarning: 
+datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to 
+represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+At line:1 char:32
++ ... v:PYTHONIOENCODING="utf-8"; python smoke_test_no_deps.py 2>&1 | Out-F ...
++                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (C:\Users\RUPAK\...(datetime.UTC).:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  days = (datetime.utcnow().date() - datetime.fromisoformat(last).date()).days
+=================================================================
+ REDROB HACKATHON ΓÇö Feature Logic Smoke Test (no deps needed)
+=================================================================
+
+Γ£à Loaded 50 sample candidates
+
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+ RANK  CANDIDATE_ID    TITLE                           YOE   SCORE
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+ #1    CAND_0000031    Recommendation Systems Engin    6.0  0.7396
+ #2    CAND_0000014    Frontend Engineer               8.4  0.3991
+ #3    CAND_0000021    Project Manager                14.5  0.3982
+ #4    CAND_0000010    Data Engineer                   4.6  0.3834
+ #5    CAND_0000043    Cloud Engineer                  8.3  0.3755
+ #6    CAND_0000001    Backend Engineer                6.9  0.3744
+ #7    CAND_0000007    Civil Engineer                  5.5  0.3403
+ #8    CAND_0000032    .NET Developer                  8.1  0.3403
+ #9    CAND_0000038    Java Developer                  6.7  0.3318
+ #10   CAND_0000033    Graphic Designer                8.6  0.3307
+ #11   CAND_0000005    Accountant                     11.0  0.3291
+ #12   CAND_0000015    Software Engineer               5.4  0.3129
+ #13   CAND_0000025    Frontend Engineer               7.3  0.3040
+ #14   CAND_0000020    Mechanical Engineer             6.3  0.3019
+ #15   CAND_0000048    Mobile Developer                9.7  0.2983
+ #16   CAND_0000045    Project Manager                12.2  0.2907
+ #17   CAND_0000046    Mechanical Engineer             7.8  0.2906
+ #18   CAND_0000037    Business Analyst               14.3  0.2904
+ #19   CAND_0000016    Accountant                      5.3  0.2902
+ #20   CAND_0000002    Operations Manager             12.5  0.2825
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+
+ Sub-scores for top-10:
+ #    ID                skill  career   behav  core_n
+ #1   CAND_0000031     0.8528  0.5967  0.7348      10
+ #2   CAND_0000014     0.2227  0.5822  0.4755       3
+ #3   CAND_0000021     0.3253  0.4961  0.3909       5
+ #4   CAND_0000010     0.2612  0.5880  0.3000       6
+ #5   CAND_0000043     0.3336  0.5250  0.2084       8
+ #6   CAND_0000001     0.4483  0.2000  0.5132      10
+ #7   CAND_0000007     0.0000  0.5767  0.6923       0
+ #8   CAND_0000032     0.1596  0.5711  0.3427       3
+ #9   CAND_0000038     0.1089  0.5356  0.4767       1
+ #10  CAND_0000033     0.0000  0.5867  0.6266       0
+
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+ ANTI-TRAP VALIDATION
+ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇ
+ Top-10 titles: ['Recommendation Systems Engineer', 'Frontend Engineer', 'Project Manager', 'Data Engineer', 'Cloud Engineer', 'Backend Engineer', 'Civil Engineer', '.NET Developer', 'Java Developer', 'Graphic Designer']
+ ΓÜá∩╕Å  NON-AI roles in top-10: ['Project Manager', '.NET Developer', 'Java Developer', 'Graphic Designer']
+    (These should be reviewed ΓÇö may indicate tuning needed)
+
+ Bottom-5 titles: ['HR Manager', 'Operations Manager', 'Project Manager', 'Operations Manager', 'Customer Support']
+
+ Score distribution (all 50 sample candidates):
+   Max:  0.7396
+   Min:  0.0441
+   Mean: 0.2719
+
+Γ£à Smoke test complete ΓÇö feature extraction logic is working correctly
+   Next: install sentence-transformers for semantic embeddings
+

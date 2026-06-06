@@ -1,0 +1,10 @@
+﻿python :   File "C:\Users\RUPAK\Desktop\INDIA RUNS\redrob-ranker\rank.py", line 212
+At line:1 char:74
++ ... ARNING="1"; python rank.py --candidates "c:\Users\RUPAK\Desktop\INDIA ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (  File "C:\User...k.py", line 212:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    except json.JSONDecodeError:
+                                ^
+IndentationError: unindent does not match any outer indentation level

@@ -1,0 +1,44 @@
+﻿============================================================
+ Redrob Hackathon ΓÇö Candidate Ranking
+ Participant: Rupak Bera
+============================================================
+  Loading similarity cache from ./cache_test...
+  Loaded 50 cached similarities
+  Cache: semantic similarities available for 50 candidates
+  Reasoning cache: 0 entries loaded
+
+[Ranker] Streaming and scoring candidates from: c:\Users\RUPAK\Desktop\INDIA RUNS\[PUB] India_runs_data_and_ai_challenge\[PUB] India_runs_data_and_ai_challenge\India_runs_data_and_ai_challenge\sample_candidates.json
+python : 
+At line:1 char:32
++ ... NG="utf-8"; python rank.py --candidates "c:\Users\RUPAK\Desktop\INDIA ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  Scoring:   0%|          | 0/50 [00:00<?, ? candidates/s]
+  Scoring: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 50/50 [00:00<00:00, 5841.65 candidates/s]
+  Scored 50 candidates in 0.0s
+
+[Ranker] Sorting 50 candidates...
+
+[Ranker] Building output for top 100 candidates...
+
+  Written: ./output/test_submission.csv (50 rows)
+
+[Validation] Quick sanity check:
+  Γ£à Validation passed: 100 unique IDs, ranks 1-100, non-increasing scores
+
+[Results] Score distribution:
+  Rank 1:   score=0.6386  | CAND_0000031
+  Rank 5:   score=0.4344  | CAND_0000024
+  Rank 10:  score=0.4030  | CAND_0000021
+  Rank 25:  score=0.3276 | CAND_0000029
+  Rank 50:  score=0.1908 | CAND_0000006
+Traceback (most recent call last):
+  File "C:\Users\RUPAK\Desktop\INDIA RUNS\redrob-ranker\rank.py", line 364, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\RUPAK\Desktop\INDIA RUNS\redrob-ranker\rank.py", line 342, in main
+    print(f"  Rank 100: score={final_scores[99]:.4f} | {fixed_output[99][0]}")
+                               ~~~~~~~~~~~~^^^^
+IndexError: list index out of range

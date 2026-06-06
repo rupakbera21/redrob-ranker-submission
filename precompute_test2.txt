@@ -1,0 +1,75 @@
+﻿============================================================
+ Redrob Hackathon ΓÇö Pre-computation Pipeline
+============================================================
+
+Config loaded:
+  Candidates: c:\Users\RUPAK\Desktop\INDIA RUNS\[PUB] India_runs_data_and_ai_challenge\[PUB] India_runs_data_and_ai_challenge\India_runs_data_and_ai_challenge\sample_candidates.json
+  Cache dir: ./cache_test
+  Embedding model: sentence-transformers/all-MiniLM-L6-v2
+  Groq top-N: 300
+  Skip Groq: True
+
+[Loader] Reading candidates from: c:\Users\RUPAK\Desktop\INDIA RUNS\[PUB] India_runs_data_and_ai_challenge\[PUB] India_runs_data_and_ai_challenge\India_runs_data_and_ai_challenge\sample_candidates.json
+  Loaded 50 candidates (JSON array) in 0.0s
+
+[Features] Extracting features for 50 candidates...
+python : 
+At line:1 char:74
++ ... ARNING="1"; python precompute.py --candidates "c:\Users\RUPAK\Desktop ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  Extracting:   0%|          | 0/50 [00:00<?, ? candidates/s]
+  Extracting: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 50/50 [00:00<00:00, 6318.44 candidates/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits 
+and faster downloads.
+  Done in 0.0s
+  Saved feature cache: ./cache_test\features.pkl (50 entries)
+
+[Embedder] Embedding 50 candidates...
+  Embedding JD...
+  Loading embedding model: sentence-transformers/all-MiniLM-L6-v2
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 103/103 [00:00<00:00, 6315.61it/s]
+  Model loaded.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]
+Batches: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:01<00:00,  1.18s/it]
+Batches: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 1/1 [00:01<00:00,  1.18s/it]
+  Computing cosine similarities...
+  Done in 13.7s | Sim range: [0.000, 1.000]
+  Saved embeddings cache to cache_test
+  Embeddings shape: (50, 384) | Similarities shape: (50,)
+
+[Scorer] Computing initial composite scores...
+  Initial score stats:
+    Min: 0.1908 | Max: 0.6386 | Mean: 0.3302
+  Top-300 score range: [0.1908, 0.6386]
+
+  Top-10 initial ranking:
+    #1 CAND_0000031: Recommendation Systems Engineer | score=0.6386
+    #2 CAND_0000022: Mechanical Engineer | score=0.4965
+    #3 CAND_0000020: Mechanical Engineer | score=0.4890
+    #4 CAND_0000007: Civil Engineer | score=0.4388
+    #5 CAND_0000024: HR Manager | score=0.4344
+    #6 CAND_0000026: Graphic Designer | score=0.4326
+    #7 CAND_0000008: Operations Manager | score=0.4182
+    #8 CAND_0000010: Data Engineer | score=0.4111
+    #9 CAND_0000042: HR Manager | score=0.4081
+    #10 CAND_0000021: Project Manager | score=0.4030
+
+[Groq] Skipped (--skip-groq flag). Using fallback reasoning in rank.py.
+
+[Cache] Saved idΓåÆindex mapping: ./cache_test\id_to_index.json
+
+============================================================
+ Pre-computation complete in 0.2 minutes
+  Candidates processed: 50
+  Reasoning cache entries: 0
+  Cache dir: ./cache_test/
+
+ Next step: python rank.py --candidates c:\Users\RUPAK\Desktop\INDIA RUNS\[PUB] India_runs_data_and_ai_challenge\[PUB] India_runs_data_and_ai_challenge\India_runs_data_and_ai_challenge\sample_candidates.json --out ./output/rupak_bera.csv
+============================================================
+

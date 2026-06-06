@@ -1,0 +1,67 @@
+﻿============================================================
+ Redrob Hackathon ΓÇö Candidate Ranking
+ Participant: Rupak Bera
+============================================================
+  Loading similarity cache from ./cache_test...
+  Loaded 50 cached similarities
+  Cache: semantic similarities available for 50 candidates
+  Reasoning cache: 0 entries loaded
+
+[Ranker] Streaming and scoring candidates from: c:\Users\RUPAK\Desktop\INDIA RUNS\[PUB] India_runs_data_and_ai_challenge\[PUB] India_runs_data_and_ai_challenge\India_runs_data_and_ai_challenge\sample_candidates.json
+python : 
+At line:1 char:32
++ ... NG="utf-8"; python rank.py --candidates "c:\Users\RUPAK\Desktop\INDIA ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  Scoring:   0%|          | 0/50 [00:00<?, ? candidates/s]
+  Scoring: 100%|ΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûêΓûê| 50/50 [00:00<00:00, 6268.20 candidates/s]
+  Scored 50 candidates in 0.0s
+
+[Ranker] Sorting 50 candidates...
+
+[Ranker] Building output for top 100 candidates...
+
+  Written: ./output/test_submission.csv (50 rows)
+
+[Validation] Quick sanity check:
+  Γ£à Validation passed: 100 unique IDs, ranks 1-100, non-increasing scores
+
+[Results] Score distribution:
+  Rank 1:   score=0.6386  | CAND_0000031
+  Rank 5:   score=0.4344  | CAND_0000024
+  Rank 10:  score=0.4030  | CAND_0000021
+  Rank 25:  score=0.3276 | CAND_0000029
+  Rank 50:  score=0.1908 | CAND_0000006
+
+[Preview] Top 10 candidates:
+  #1: CAND_0000031 | Recommendation Systems Engineer (6.0yr) | 0.6386
+       ΓåÆ Recommendation Systems Engineer with 6.0 yrs exp at Swiggy; top skills: Embeddings, Pinecone, Huggin...
+  #2: CAND_0000022 | Mechanical Engineer (1.1yr) | 0.4965
+       ΓåÆ Mechanical Engineer with 1.1 yrs exp at Hooli; top skills: Terraform, Scrum, AWS; marked open to wor...
+  #3: CAND_0000020 | Mechanical Engineer (6.3yr) | 0.4890
+       ΓåÆ Mechanical Engineer with 6.3 yrs exp at Wipro; top skills: Weights & Biases, GCP, HTML; strong recru...
+  #4: CAND_0000007 | Civil Engineer (5.5yr) | 0.4388
+       ΓåÆ Civil Engineer with 5.5 yrs exp at Wipro; top skills: MongoDB, Sales, Spark; strong recruiter respon...
+  #5: CAND_0000024 | HR Manager (7.5yr) | 0.4344
+       ΓåÆ HR Manager with 7.5 yrs exp at TCS; top skills: Forecasting, ETL, Node.js; strong recruiter response...
+  #6: CAND_0000026 | Graphic Designer (6.8yr) | 0.4326
+       ΓåÆ Graphic Designer with 6.8 yrs exp at Initech; top skills: Kubeflow, Kubernetes, Airflow; strong recr...
+  #7: CAND_0000008 | Operations Manager (3.6yr) | 0.4182
+       ΓåÆ Operations Manager with 3.6 yrs exp at Wipro; top skills: TypeScript, Rust, Java; notice period 90d ...
+  #8: CAND_0000010 | Data Engineer (4.6yr) | 0.4111
+       ΓåÆ Data Engineer with 4.6 yrs exp at Ola; top skills: GANs, Object Detection, BM25; notice period 120d ...
+  #9: CAND_0000042 | HR Manager (5.0yr) | 0.4081
+       ΓåÆ HR Manager with 5.0 yrs exp at Wayne Enterprises; top skills: Marketing, YOLO, Project Management; s...
+  #10: CAND_0000021 | Project Manager (14.5yr) | 0.4030
+       ΓåÆ Project Manager with 14.5 yrs exp at Wipro; top skills: Fine-tuning LLMs, Prompt Engineering, Embedd...
+
+============================================================
+ Ranking complete in 0.0s (0.0 min)
+  Input: 50 candidates
+  Output: ./output/test_submission.csv
+  Mode: Cache+Semantic
+  Groq reasoning: 0/100 entries
+============================================================
+
