@@ -78,6 +78,10 @@ redrob-ranker/
 
 ## 🧠 Key Design Decisions
 
+### 🛡️ Robustness & Error Handling
+- **Dynamic LLM Fallback**: If the Groq API hits a hard rate limit (`429 Error`), the pipeline automatically aborts the remaining API calls, saves the partial reasoning results, and seamlessly falls back to the fast, rule-based reasoning engine. This prevents the pipeline from freezing due to free-tier API quotas.
+- **Cross-Platform OS-Proofing**: The console outputs are forced to `utf-8` encoding dynamically. This ensures that printing emojis, arrows (`→`), or special characters will never crash Windows machines during evaluation.
+
 ### Why This Beats Keyword Matching
 
 | Trap in Dataset | Our Handling |
